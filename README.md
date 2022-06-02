@@ -20,7 +20,7 @@ Nice to Have<br>
 ## Api
 EndPoint для получения gif: <br>
 GET: http://localhost:9000/giphy-app/api/random-gif?currency=COMPARED_CURRENCY<br>
-COMPARED_CURRENCY = RUB, EUR, CNY или INR и т.д.
+COMPARED_CURRENCY = RUB, EUR, CNY ,INR и т.д.
 
 ## Контроллер с фронтом доступен по адресу:
 > http://localhost:9000/giphy-app/get-gif

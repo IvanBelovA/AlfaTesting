@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+    crossorigin="anonymous">
+
+<title>Home</title>
+</head>
+<body>
+
+<div th:insert="~{header :: head}"></div>
+
+<div class="container">
+  <div class="row justify-content-center" style="margin-top: 5%;">
+    <div class="col-8">
+      <p>Данный сервис, обращается к сервису курсов валют, и отображает gif:<br>
+             • если курс по отношению к USD за сегодня стал выше вчерашнего, то на экране отображается гифка с тегом "rich"<br>
+               • если ниже - то с тегом "broke"<br></p>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center" style="margin-top: 5%;">
+    <div class="col-8">
+        <select id="currencySelect" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected>Выберите сравниваемую валюту</option>
+            <option th:each="currency : ${currencies}" 
+                    th:value="${currency}" 
+                    th:text="${currency.getCurrency()}">
+            </option>
+        </select>
+     </div>
+  </div>
+    <div class="row justify-content-center">
+        <div class="col-1">
+            <button id="comparedButton" class="btn btn-dark" type="button">Сравнить</button>
+        </div>
+    </div>
+    <div class="row justify-content-center" style="margin-top: 5%;">
+        <div class="col-10">
+            <div class="gif-out">
+                <div class="yesterday">Курс вчера: </div>
+                <div class="now">Курс сейчас: </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" th:src="@{/gifscript.js}"></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+</html>

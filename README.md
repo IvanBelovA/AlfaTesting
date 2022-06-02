@@ -32,7 +32,7 @@ COMPARED_CURRENCY = RUB, EUR, CNY ,INR и т.д.
 
 > java -jar AlfaGiphy-0.0.1-SNAPSHOT.jar
 
-Docker:
+Docker:<br>
 Для создания образа Docker, находясь в корне проекта:  
 > docker build -t ivanbelov/alfa-giphy-docker:v1.0 . 
 > 
